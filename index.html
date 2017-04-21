@@ -1,0 +1,48 @@
+@@ -0,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Gaussian Filter</title>
+
+    <script type="text/javascript" src="index.js"></script>
+    <script>
+
+      window.onload = function() {
+        var img = new Image();
+        img.onload = function() {
+          invertColor(this);
+        }
+        img.src = "panda.jpg";
+      };
+
+      function invertColor(img) {
+        var canvas = document.getElementById("cvOriginVideo");
+        var context = canvas.getContext("2d");
+        //
+        context.drawImage(img, 0, 0);
+
+        context.drawImage(img, img.width, 0);
+
+        var imageData = context.getImageData(0, 0, img.width, img.height);
+        var data = imageData.data;
+        for (var i = 0; i < data.length; i += 4) {
+          data[i] = 255 - data[i];
+          data[i + 1] = 255 - data[i + 1];
+          data[i + 2] = 255 - data[i + 2];
+          data[i + 3] = 255;
+        }
+        context.putImageData(imageData, 0, 0);
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="cvOriginVideo" width="800" height="400">
+      Sorry! Your browser doesn't support Canvas!
+    </canvas>
+    <canvas id="cvGaussianVideo">
+      Sorry! Your browser doesn't support Canvas!
+    </canvas>
+  </body>
+
+</html>
