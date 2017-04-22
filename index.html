@@ -43,90 +43,71 @@
 
         console.log(data.length,' ',w, h);
         var cw = w * 4;
-        var arrRedPixel1 = [0, 0, 0,
-                             0, 0, 0,
-                             0, 0, 0];
-         arrRedPixel1[0] = data[4*(602 - w - 1)];
-         arrRedPixel1[1] = data[4*(602 - w)];
-         arrRedPixel1[2] = data[4*(602 - w + 1)];
-         arrRedPixel1[3] = data[4*(602 - 1)];
-         arrRedPixel1[4] = data[4*602];
-         arrRedPixel1[5] = data[4*(602 + 1)];
-         arrRedPixel1[6] = data[4*(602 + w - 1)];
-         arrRedPixel1[7] = data[4*(602 + w)];
-         arrRedPixel1[8] = data[4*(602 + w + 1)];
-         var newRedValue1 = 0;
 
-         for (var g = 0; g < 9; g++)
-         {
-           newRedValue1 += arrRedPixel1[i] * arrGauss[i];
-         }
-
-         newRedValue1 = newRedValue1 / 16;
-         console.log(arrRedPixel1, newRedValue1);
-
-        for(var i = cw + 4; i < data.length - cw - 4; i += 4) {
+        for(var i = 4 * (w + 1); i < data.length - 4 * (w - 1); i += 4) {
           //Red
           var arrRedPixel = [0, 0, 0,
                                0, 0, 0,
                                0, 0, 0];
-          arrRedPixel[0] = data[i - cw - 4];
-          arrRedPixel[1] = data[i - cw];
-          arrRedPixel[2] = data[i - cw + 4];
-          arrRedPixel[3] = data[i - 4];
+          arrRedPixel[0] = data[i - cw - 4)];
+          arrRedPixel[1] = data[i - cw)];
+          arrRedPixel[2] = data[i - cw + 4)];
+          arrRedPixel[3] = data[i - 4)];
           arrRedPixel[4] = data[i];
-          arrRedPixel[5] = data[i + 4];
-          arrRedPixel[6] = data[i + cw - 4];
-          arrRedPixel[7] = data[i + cw];
-          arrRedPixel[8] = data[i + cw + 4];
+          arrRedPixel[5] = data[i + 4)];
+          arrRedPixel[6] = data[i + cw - 4)];
+          arrRedPixel[7] = data[i + cw)];
+          arrRedPixel[8] = data[i + cw + 4)];
 
           var newRedValue = 0;
 
           for (var g = 0; g < 9; g++)
           {
-            newRedValue += arrRedPixel[i] * arrGauss[i];
+            newRedValue += arrRedPixel[g] * arrGauss[g];
           }
 
           newRedValue = newRedValue / 16;
-
+          console.log(arrRedPixel, newRedValue);
           data[i] = newRedValue;
           //Green
-          var PixelG1 = data[i - cw - 4 + 1];
-          var PixelG2 = data[i - cw + 1];
-          var PixelG3 = data[i - cw + 4 + 1];
-          var PixelG4 = data[i - 4 + 1];
-          var PixelG5 = data[i + 1];
-          var PixelG6 = data[i + 4 + 1];
-          var PixelG7 = data[i + cw - 4 + 1];
-          var PixelG8 = data[i + cw + 1];
-          var PixelG9 = data[i + cw + 4 + 1];
-          var arrGreenPixel = [ PixelG1, PixelG2, PixelG3,
-                              PixelG4, PixelG5, PixelG6,
-                              PixelG7, PixelG8, PixelG9]
+          var arrGreenPixel = [0, 0, 0,
+                               0, 0, 0,
+                               0, 0, 0];
+          arrGreenPixel[0] = data[i - cw - 4 + 1)];
+          arrGreenPixel[1] = data[i - cw + 1)];
+          arrGreenPixel[2] = data[i - cw + 4 + 1)];
+          arrGreenPixel[3] = data[i - 4 + 1)];
+          arrGreenPixel[4] = data[i + 1];
+          arrGreenPixel[5] = data[i + 4 + 1)];
+          arrGreenPixel[6] = data[i + cw - 4 + 1)];
+          arrGreenPixel[7] = data[i + cw + 1)];
+          arrGreenPixel[8] = data[i + cw + 4 + 1)];
+
           var newGreenValue = 0;
           for (var g = 0; g < 10; g++)
           {
-            newGreenValue += arrGreenPixel[i] * arrGauss[i];
+            newGreenValue += arrGreenPixel[g] * arrGauss[g];
           }
           newGreenValue = newGreenValue / 16;
           data[i + 1] = newGreenValue;
           //Blue
-          var PixelB1 = data[i - cw - 4 + 2];
-          var PixelB2 = data[i - cw + 2];
-          var PixelB3 = data[i - cw + 4 + 2];
-          var PixelB4 = data[i - 4 + 2];
-          var PixelB5 = data[i + 2];
-          var PixelB6 = data[i + 4 + 2];
-          var PixelB7 = data[i + cw - 4 + 2];
-          var PixelB8 = data[i + cw + 2];
-          var PixelB9 = data[i + cw + 4 + 2];
-          var arrBluePixel = [ PixelB1, PixelB2, PixelB3,
-                              PixelB4, PixelB5, PixelB6,
-                              PixelB7, PixelB8, PixelB9]
+          var arrBluePixel = [0, 0, 0,
+                               0, 0, 0,
+                               0, 0, 0];
+          arrBluePixel[0] = data[i - cw - 4 + 2)];
+          arrBluePixel[1] = data[i - cw + 2)];
+          arrBluePixel[2] = data[i - cw + 4 + 2)];
+          arrBluePixel[3] = data[i - 4 + 2)];
+          arrBluePixel[4] = data[i + 2];
+          arrBluePixel[5] = data[i + 4 + 2)];
+          arrBluePixel[6] = data[i + cw - 4 + 2)];
+          arrBluePixel[7] = data[i + cw + 2)];
+          arrBluePixel[8] = data[i + cw + 4 + 2)];
+
           var newBlueValue = 0;
           for (var g = 0; g < 10; g++)
           {
-            newBlueValue += arrBluePixel[i] * arrGauss[i];
+            newBlueValue += arrBluePixel[g] * arrGauss[g];
           }
           newBlueValue = newBlueValue / 16;
           data[i + 2] = newBlueValue;
