@@ -46,15 +46,15 @@
         var arrRedPixel1 = [0, 0, 0,
                              0, 0, 0,
                              0, 0, 0];
-         arrRedPixel1[0] = data[601 - cw - 4];
-         arrRedPixel1[1] = data[601 - cw];
-         arrRedPixel1[2] = data[601 - cw + 4];
-         arrRedPixel1[3] = data[601 - 4];
-         arrRedPixel1[4] = data[601];
-         arrRedPixel1[5] = data[601 + 4];
-         arrRedPixel1[6] = data[601 + cw - 4];
-         arrRedPixel1[7] = data[601 + cw];
-         arrRedPixel1[8] = data[601 + cw + 4];
+         arrRedPixel1[0] = data[4*(601 - cw - 1)];
+         arrRedPixel1[1] = data[4*(601 - cw)];
+         arrRedPixel1[2] = data[4*(601 - cw + 1)];
+         arrRedPixel1[3] = data[4*(601 - 1)];
+         arrRedPixel1[4] = data[4*601];
+         arrRedPixel1[5] = data[4*(601 + 1)];
+         arrRedPixel1[6] = data[4*(601 + cw - 1)];
+         arrRedPixel1[7] = data[4*(601 + cw)];
+         arrRedPixel1[8] = data[4*(601 + cw + 1)];
          var newRedValue1 = 0;
 
          for (var g = 0; g < 9; g++)
