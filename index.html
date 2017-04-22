@@ -43,7 +43,7 @@
 
         console.log(data.length,' ',w, h);
         var cw = w * 4;
-        var arrRedPixel1[] = [0, 0, 0,
+        var arrRedPixel1 = [0, 0, 0,
                              0, 0, 0,
                              0, 0, 0];
          arrRedPixel1[0] = data[601 - cw - 4];
@@ -67,7 +67,7 @@
 
         for(var i = cw + 4; i < data.length - cw - 4; i += 4) {
           //Red
-          var arrRedPixel[] = [0, 0, 0,
+          var arrRedPixel = [0, 0, 0,
                                0, 0, 0,
                                0, 0, 0];
           arrRedPixel[0] = data[i - cw - 4];
