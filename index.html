@@ -40,25 +40,49 @@
                         1, 2, 1];
 
         // Apply Gaussian filter
-        var cw = w / 4;
-        console.log(data.length,' ',w, h, cw);
-        for(var i = cw + 4; i < data.length - cw - 4; i+=4) {
+
+        console.log(data.length,' ',w, h);
+        var cw = w * 4;
+        var arrRedPixel1[] = [0, 0, 0,
+                             0, 0, 0,
+                             0, 0, 0,];
+         arrRedPixel1[0] = data[601 - cw - 4];
+         arrRedPixel1[1] = data[601 - cw];
+         arrRedPixel1[2] = data[601 - cw + 4];
+         arrRedPixel1[3] = data[601 - 4];
+         arrRedPixel1[4] = data[601];
+         arrRedPixel1[5] = data[601 + 4];
+         arrRedPixel1[6] = data[601 + cw - 4];
+         arrRedPixel1[7] = data[601 + cw];
+         arrRedPixel1[8] = data[601 + cw + 4];
+         var newRedValue1 = 0;
+
+         for (var g = 0; g < 9; g++)
+         {
+           newRedValue1 += arrRedPixel1[i] * arrGauss[i];
+         }
+
+         newRedValue1 = newRedValue1 / 16;
+         console.log(arrRedPixel1, newRedValue1);
+
+        for(var i = cw + 4; i < data.length - cw - 4; i += 4) {
           //Red
-          var PixelR1 = data[i - cw - 4];
-          var PixelR2 = data[i - cw];
-          var PixelR3 = data[i - cw + 4];
-          var PixelR4 = data[i - 4];
-          var PixelR5 = data[i];
-          var PixelR6 = data[i + 4];
-          var PixelR7 = data[i + cw - 4];
-          var PixelR8 = data[i + cw];
-          var PixelR9 = data[i + cw + 4];
-          var arrRedPixel = [ PixelR1, PixelR2, PixelR3,
-                              PixelR4, PixelR5, PixelR6,
-                              PixelR7, PixelR8, PixelR9]
+          var arrRedPixel[] = [0, 0, 0,
+                               0, 0, 0,
+                               0, 0, 0,];
+          arrRedPixel[0] = data[i - cw - 4];
+          arrRedPixel[1] = data[i - cw];
+          arrRedPixel[2] = data[i - cw + 4];
+          arrRedPixel[3] = data[i - 4];
+          arrRedPixel[4] = data[i];
+          arrRedPixel[5] = data[i + 4];
+          arrRedPixel[6] = data[i + cw - 4];
+          arrRedPixel[7] = data[i + cw];
+          arrRedPixel[8] = data[i + cw + 4];
+
           var newRedValue = 0;
 
-          for (var g = 0; g < 10; g++)
+          for (var g = 0; g < 9; g++)
           {
             newRedValue += arrRedPixel[i] * arrGauss[i];
           }
