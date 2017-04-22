@@ -36,7 +36,7 @@
         var data = idata.data;
         // Create Gaussian array
         var arrGauss = [8, 16, 8,
-                        16, 48, 16,
+                        16, 128, 16,
                         8, 16, 8];
 
         // Apply Gaussian filter
@@ -67,7 +67,7 @@
 
           }
 
-          newRedValue = parseInt(newRedValue / 144);
+          newRedValue = parseInt(newRedValue / 224);
 
           data[i] = newRedValue;
           //Green
@@ -89,7 +89,7 @@
           {
             newGreenValue += arrGreenPixel[g] * arrGauss[g];
           }
-          newGreenValue = parseInt(newGreenValue / 144);
+          newGreenValue = parseInt(newGreenValue / 224);
           data[i + 1] = newGreenValue;
           //Blue
           var arrBluePixel = [0, 0, 0,
@@ -110,7 +110,7 @@
           {
             newBlueValue += arrBluePixel[g] * arrGauss[g];
           }
-          newBlueValue = parseInt(newBlueValue / 144);
+          newBlueValue = parseInt(newBlueValue / 224);
           data[i + 2] = newBlueValue;
         }
         idata.data = data;
