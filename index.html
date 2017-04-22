@@ -64,10 +64,11 @@
           for (var g = 0; g < 9; g++)
           {
             newRedValue += arrRedPixel[g] * arrGauss[g];
-            console.log(newRedValue);
+
           }
 
-          newRedValue = newRedValue / 16;
+          newRedValue = parseInt(newRedValue / 16);
+          console.log(newRedValue);
 
           data[i] = newRedValue;
           //Green
@@ -89,7 +90,7 @@
           {
             newGreenValue += arrGreenPixel[g] * arrGauss[g];
           }
-          newGreenValue = newGreenValue / 16;
+          newGreenValue = parseInt(newGreenValue / 16);
           data[i + 1] = newGreenValue;
           //Blue
           var arrBluePixel = [0, 0, 0,
@@ -110,7 +111,7 @@
           {
             newBlueValue += arrBluePixel[g] * arrGauss[g];
           }
-          newBlueValue = newBlueValue / 16;
+          newBlueValue = parseInt(newBlueValue / 16);
           data[i + 2] = newBlueValue;
         }
         idata.data = data;
