@@ -35,9 +35,9 @@
         var idata = bc.getImageData(0,0,w,h);
         var data = idata.data;
         // Create Gaussian array
-        var arrGauss = [1, 2, 1,
-                        2, 4, 2,
-                        1, 2, 1];
+        var arrGauss = [8, 16, 8,
+                        16, 48, 16,
+                        8, 16, 8];
 
         // Apply Gaussian filter
 
@@ -67,7 +67,7 @@
 
           }
 
-          newRedValue = parseInt(newRedValue / 16);
+          newRedValue = parseInt(newRedValue / 144);
 
           data[i] = newRedValue;
           //Green
@@ -89,7 +89,7 @@
           {
             newGreenValue += arrGreenPixel[g] * arrGauss[g];
           }
-          newGreenValue = parseInt(newGreenValue / 16);
+          newGreenValue = parseInt(newGreenValue / 144);
           data[i + 1] = newGreenValue;
           //Blue
           var arrBluePixel = [0, 0, 0,
@@ -110,7 +110,7 @@
           {
             newBlueValue += arrBluePixel[g] * arrGauss[g];
           }
-          newBlueValue = parseInt(newBlueValue / 16);
+          newBlueValue = parseInt(newBlueValue / 144);
           data[i + 2] = newBlueValue;
         }
         idata.data = data;
