@@ -64,10 +64,11 @@
           for (var g = 0; g < 9; g++)
           {
             newRedValue += arrRedPixel[g] * arrGauss[g];
+            console.log(newRedValue);
           }
 
           newRedValue = newRedValue / 16;
-          console.log(arrRedPixel, newRedValue);
+
           data[i] = newRedValue;
           //Green
           var arrGreenPixel = [0, 0, 0,
