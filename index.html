@@ -6,129 +6,61 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function(){
-        var v = document.getElementById('videoOrigin');
-        var canvas = document.getElementById('videoResult');
-        var context = canvas.getContext('2d');
-        var back = document.createElement('canvas');
-        var backcontext = back.getContext('2d');
+          var v = document.getElementById('v');
+          var canvas = document.getElementById('c');
+          var context = canvas.getContext('2d');
+          var back = document.createElement('canvas');
+          var backcontext = back.getContext('2d');
 
-        var cw,ch;
+          var cw,ch;
 
-        v.addEventListener('play', function(){
-            cw = v.clientWidth;
-            ch = v.clientHeight;
-            canvas.width = cw;
-            canvas.height = ch;
-            back.width = cw;
-            back.height = ch;
-            draw(v,context,backcontext,cw,ch);
-        },false);
+          v.addEventListener('play', function(){
+              cw = v.clientWidth;
+              ch = v.clientHeight;
+              canvas.width = cw;
+              canvas.height = ch;
+              back.width = cw;
+              back.height = ch;
+              draw(v,context,backcontext,cw,ch);
+          },false);
 
-      },false);
+          },false);
 
-
-      function draw(v,c,bc,w,h) {
-        if(v.paused || v.ended) return false;
-        // First, draw it into the backing canvas
-        bc.drawImage(v,0,0,w,h);
-        // Grab the pixel data from the backing canvas
-        var idata = bc.getImageData(0,0,w,h);
-        var data = idata.data;
-        // Create Gaussian array
-        var arrGauss = [8, 16, 8,
-                        16, 128, 16,
-                        8, 16, 8];
-
-        // Apply Gaussian filter
-
-
-        var cw = w * 4;
-
-        for(var i = 4 * (w + 1); i < data.length - 4 * (w - 1); i += 4) {
-          //Red
-          var arrRedPixel = [0, 0, 0,
-                               0, 0, 0,
-                               0, 0, 0];
-          arrRedPixel[0] = data[i - cw - 4];
-          arrRedPixel[1] = data[i - cw];
-          arrRedPixel[2] = data[i - cw + 4];
-          arrRedPixel[3] = data[i - 4];
-          arrRedPixel[4] = data[i];
-          arrRedPixel[5] = data[i + 4];
-          arrRedPixel[6] = data[i + cw - 4];
-          arrRedPixel[7] = data[i + cw];
-          arrRedPixel[8] = data[i + cw + 4];
-
-          var newRedValue = 0;
-
-          for (var g = 0; g < 9; g++)
-          {
-            newRedValue += arrRedPixel[g] * arrGauss[g];
-
+          function draw(v,c,bc,w,h) {
+          if(v.paused || v.ended) return false;
+          // First, draw it into the backing canvas
+          bc.drawImage(v,0,0,w,h);
+          // Grab the pixel data from the backing canvas
+          var idata = bc.getImageData(0,0,w,h);
+          var data = idata.data;
+          // Loop through the pixels, turning them grayscale
+          for(var i = 0; i < data.length; i+=4) {
+              var r = data[i];
+              var g = data[i+1];
+              var b = data[i+2];
+              var brightness = (3*r+4*g+b)>>>3;
+              data[i] = brightness;
+              data[i+1] = brightness;
+              data[i+2] = brightness;
           }
-
-          newRedValue = parseInt(newRedValue / 224);
-
-          data[i] = newRedValue;
-          //Green
-          var arrGreenPixel = [0, 0, 0,
-                               0, 0, 0,
-                               0, 0, 0];
-          arrGreenPixel[0] = data[i - cw - 4 + 1];
-          arrGreenPixel[1] = data[i - cw + 1];
-          arrGreenPixel[2] = data[i - cw + 4 + 1];
-          arrGreenPixel[3] = data[i - 4 + 1];
-          arrGreenPixel[4] = data[i + 1];
-          arrGreenPixel[5] = data[i + 4 + 1];
-          arrGreenPixel[6] = data[i + cw - 4 + 1];
-          arrGreenPixel[7] = data[i + cw + 1];
-          arrGreenPixel[8] = data[i + cw + 4 + 1];
-
-          var newGreenValue = 0;
-          for (var g = 0; g < 9; g++)
-          {
-            newGreenValue += arrGreenPixel[g] * arrGauss[g];
+          idata.data = data;
+          // Draw the pixels onto the visible canvas
+          c.putImageData(idata,0,0);
+          // Start over!
+          setTimeout(function(){ draw(v,c,bc,w,h); }, 0);
           }
-          newGreenValue = parseInt(newGreenValue / 224);
-          data[i + 1] = newGreenValue;
-          //Blue
-          var arrBluePixel = [0, 0, 0,
-                               0, 0, 0,
-                               0, 0, 0];
-          arrBluePixel[0] = data[i - cw - 4 + 2];
-          arrBluePixel[1] = data[i - cw + 2];
-          arrBluePixel[2] = data[i - cw + 4 + 2];
-          arrBluePixel[3] = data[i - 4 + 2];
-          arrBluePixel[4] = data[i + 2];
-          arrBluePixel[5] = data[i + 4 + 2];
-          arrBluePixel[6] = data[i + cw - 4 + 2];
-          arrBluePixel[7] = data[i + cw + 2];
-          arrBluePixel[8] = data[i + cw + 4 + 2];
-
-          var newBlueValue = 0;
-          for (var g = 0; g < 9; g++)
-          {
-            newBlueValue += arrBluePixel[g] * arrGauss[g];
-          }
-          newBlueValue = parseInt(newBlueValue / 224);
-          data[i + 2] = newBlueValue;
-        }
-        idata.data = data;
-        // Draw the pixels onto the visible canvas
-        c.putImageData(idata,0,0);
-        // Start over!
-        setTimeout(function(){ draw(v,c,bc,w,h); }, 0);
-      }
 
     </script>
   </head>
   <body>
+
     <video id="videoOrigin" controls loop>
         <source src=test.mp4 type=video/mp4>
     </video>
     <canvas id="videoResult">
 
     </canvas>
+    <h1>Video đã được phục chế</h1>
   </body>
 
 </html>
