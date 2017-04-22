@@ -41,7 +41,7 @@
 
         // Apply Gaussian filter
 
-        console.log(data.length,' ',w, h);
+
         var cw = w * 4;
 
         for(var i = 4 * (w + 1); i < data.length - 4 * (w - 1); i += 4) {
@@ -68,7 +68,6 @@
           }
 
           newRedValue = parseInt(newRedValue / 16);
-          console.log(newRedValue);
 
           data[i] = newRedValue;
           //Green
