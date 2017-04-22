@@ -55,11 +55,14 @@
                               PixelR4, PixelR5, PixelR6,
                               PixelR7, PixelR8, PixelR9]
           var newRedValue = 0;
+
           for (var g = 0; g < 10; g++)
           {
             newRedValue += arrRedPixel[i] * arrGauss[i];
           }
+
           newRedValue = newRedValue / 16;
+          console.log(newRedValue);
           data[i] = newRedValue;
           //Green
           var PixelG1 = data[i - cw - 4 + 1];
