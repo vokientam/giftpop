@@ -37,9 +37,11 @@
         // Create Gaussian array
         var arrGauss = [1, 2, 1,
                         2, 4, 2,
-                        1, 2, 1]
+                        1, 2, 1];
+
         // Apply Gaussian filter
         var cw = w / 4;
+        console.log(data.length,' ',w, h, cw);
         for(var i = cw + 4; i < data.length - cw - 4; i+=4) {
           //Red
           var PixelR1 = data[i - cw - 4];
@@ -62,7 +64,7 @@
           }
 
           newRedValue = newRedValue / 16;
-          console.log(newRedValue);
+
           data[i] = newRedValue;
           //Green
           var PixelG1 = data[i - cw - 4 + 1];
