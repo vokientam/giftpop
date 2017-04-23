@@ -5,121 +5,117 @@
     <title>Gaussian Filter</title>
 
     <script>
+
         document.addEventListener('DOMContentLoaded', function(){
-        var v = document.getElementById('videoOrigin');
-        var canvas = document.getElementById('videoResult');
-        var context = canvas.getContext('2d');
-        var back = document.createElement('canvas');
-        var backcontext = back.getContext('2d');
+          var v = document.getElementById('videoOrigin');
+          var canvas = document.getElementById('videoResult');
+          var context = canvas.getContext('2d');
+          var back = document.createElement('canvas');
+          var backcontext = back.getContext('2d');
+          var cw,ch;
 
-        var cw,ch;
-
-        v.addEventListener('play', function(){
-            cw = v.clientWidth;
-            ch = v.clientHeight;
-            canvas.width = cw;
-            canvas.height = ch;
-            back.width = cw;
-            back.height = ch;
-            draw(v,context,backcontext,cw,ch);
+          v.addEventListener('play', function(){
+              cw = v.clientWidth;
+              ch = v.clientHeight;
+              canvas.width = cw;
+              canvas.height = ch;
+              back.width = cw;
+              back.height = ch;
+              draw(v,context,backcontext,cw,ch);
+          },false);
         },false);
-
-      },false);
 
 
       function draw(v,c,bc,w,h) {
         if(v.paused || v.ended) return false;
-        // First, draw it into the backing canvas
+        // Draw video into the backing canvas
         bc.drawImage(v,0,0,w,h);
         // Grab the pixel data from the backing canvas
         var idata = bc.getImageData(0,0,w,h);
         var data = idata.data;
-        // Create Gaussian array
-        var arrGauss = [8, 16, 8,
+        // Create Gaussian array and sum
+        var arrGauss = [1, 16, 1,
                         16, 128, 16,
-                        8, 16, 8];
+                        1, 16, 1];
+        var sumGauss = 0;
+        for (var int i = 0; i < 9; i++) {
+          sumGauss += arrGauss[i];
+        }
+        // Gaussian filter processing
+        var pos = w * 4; // start from second line of pixel matrix
 
-        // Apply Gaussian filter
-
-
-        var cw = w * 4;
-
-        for(var i = 4 * (w + 1); i < data.length - 4 * (w - 1); i += 4) {
-          //Red
+        for(var i = pos + 4; i < data.length - pos - 4; i += 4) { // ignore border elements
+          // Red channel
           var arrRedPixel = [0, 0, 0,
                                0, 0, 0,
                                0, 0, 0];
-          arrRedPixel[0] = data[i - cw - 4];
-          arrRedPixel[1] = data[i - cw];
-          arrRedPixel[2] = data[i - cw + 4];
-          arrRedPixel[3] = data[i - 4];
-          arrRedPixel[4] = data[i];
-          arrRedPixel[5] = data[i + 4];
-          arrRedPixel[6] = data[i + cw - 4];
-          arrRedPixel[7] = data[i + cw];
-          arrRedPixel[8] = data[i + cw + 4];
+          arrRedPixel[0] = data[i - pos - 4];  // top left element
+          arrRedPixel[1] = data[i - pos];      // top element
+          arrRedPixel[2] = data[i - pos + 4];  // top right element
+          arrRedPixel[3] = data[i - 4];       // left element
+          arrRedPixel[4] = data[i];           // middle element
+          arrRedPixel[5] = data[i + 4];       // right element
+          arrRedPixel[6] = data[i + pos - 4];  // bottom left element
+          arrRedPixel[7] = data[i + pos];      // bottom element
+          arrRedPixel[8] = data[i + pos + 4];  // bottom right element
 
           var newRedValue = 0;
 
           for (var g = 0; g < 9; g++)
           {
             newRedValue += arrRedPixel[g] * arrGauss[g];
-
           }
-
-          newRedValue = parseInt(newRedValue / 224);
-
+          newRedValue = parseInt(newRedValue / sumGauss);
           data[i] = newRedValue;
-          //Green
+          // Green channel
           var arrGreenPixel = [0, 0, 0,
                                0, 0, 0,
                                0, 0, 0];
-          arrGreenPixel[0] = data[i - cw - 4 + 1];
-          arrGreenPixel[1] = data[i - cw + 1];
-          arrGreenPixel[2] = data[i - cw + 4 + 1];
+          arrGreenPixel[0] = data[i - pos - 4 + 1];
+          arrGreenPixel[1] = data[i - pos + 1];
+          arrGreenPixel[2] = data[i - pos + 4 + 1];
           arrGreenPixel[3] = data[i - 4 + 1];
           arrGreenPixel[4] = data[i + 1];
           arrGreenPixel[5] = data[i + 4 + 1];
-          arrGreenPixel[6] = data[i + cw - 4 + 1];
-          arrGreenPixel[7] = data[i + cw + 1];
-          arrGreenPixel[8] = data[i + cw + 4 + 1];
+          arrGreenPixel[6] = data[i + pos - 4 + 1];
+          arrGreenPixel[7] = data[i + pos + 1];
+          arrGreenPixel[8] = data[i + pos + 4 + 1];
 
           var newGreenValue = 0;
           for (var g = 0; g < 9; g++)
           {
             newGreenValue += arrGreenPixel[g] * arrGauss[g];
           }
-          newGreenValue = parseInt(newGreenValue / 224);
+          newGreenValue = parseInt(newGreenValue / sumGauss);
           data[i + 1] = newGreenValue;
-          //Blue
+          // Blue channel
           var arrBluePixel = [0, 0, 0,
                                0, 0, 0,
                                0, 0, 0];
-          arrBluePixel[0] = data[i - cw - 4 + 2];
-          arrBluePixel[1] = data[i - cw + 2];
-          arrBluePixel[2] = data[i - cw + 4 + 2];
+          arrBluePixel[0] = data[i - pos - 4 + 2];
+          arrBluePixel[1] = data[i - pos + 2];
+          arrBluePixel[2] = data[i - pos + 4 + 2];
           arrBluePixel[3] = data[i - 4 + 2];
           arrBluePixel[4] = data[i + 2];
           arrBluePixel[5] = data[i + 4 + 2];
-          arrBluePixel[6] = data[i + cw - 4 + 2];
-          arrBluePixel[7] = data[i + cw + 2];
-          arrBluePixel[8] = data[i + cw + 4 + 2];
+          arrBluePixel[6] = data[i + pos - 4 + 2];
+          arrBluePixel[7] = data[i + pos + 2];
+          arrBluePixel[8] = data[i + pos + 4 + 2];
 
           var newBlueValue = 0;
           for (var g = 0; g < 9; g++)
           {
             newBlueValue += arrBluePixel[g] * arrGauss[g];
           }
-          newBlueValue = parseInt(newBlueValue / 224);
+          newBlueValue = parseInt(newBlueValue / sumGauss);
           data[i + 2] = newBlueValue;
         }
         idata.data = data;
         // Draw the pixels onto the visible canvas
         c.putImageData(idata,0,0);
-        // Start over!
+        // Start over
         setTimeout(function(){ draw(v,c,bc,w,h); }, 0);
       }
-
     </script>
   </head>
   <body>
