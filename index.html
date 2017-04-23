@@ -34,7 +34,7 @@
         var idata = bc.getImageData(0,0,w,h);
         var data = idata.data;
         // Create Gaussian array and sum
-        var arrGauss = [1, 4, 16, 4, 1
+        var arrGauss = [1, 4, 16, 4, 1,
                         4, 16, 48, 16, 4,
                         16, 48, 60, 48, 16,
                         4, 16, 48, 16, 4,
@@ -48,7 +48,7 @@
         var pix = w * 4;
         for(var i = pos + 8; i < data.length - pos - 8; i += 4) { // ignore border elements
           // Red channel
-          var arrRedPixel = [0, 0, 0, 0, 0
+          var arrRedPixel = [0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0,
@@ -87,7 +87,7 @@
           newRedValue = parseInt(newRedValue / sumGauss);
           data[i] = newRedValue;
           // Green channel
-          var arrGreenPixel = [0, 0, 0, 0, 0
+          var arrGreenPixel = [0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0,
@@ -126,7 +126,7 @@
           newGreenValue = parseInt(newGreenValue / sumGauss);
           data[i] = newGreenValue;
           // Blue channel
-          var arrBluePixel = [0, 0, 0, 0, 0
+          var arrBluePixel = [0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0,
