@@ -124,7 +124,7 @@
             newGreenValue += arrGreenPixel[index] * arrGauss[index];
           }
           newGreenValue = parseInt(newGreenValue / sumGauss);
-          data[i] = newGreenValue;
+          data[i + 1] = newGreenValue;
           // Blue channel
           var arrBluePixel = [0, 0, 0, 0, 0,
                             0, 0, 0, 0, 0,
@@ -163,7 +163,7 @@
             newBlueValue += arrBluePixel[index] * arrGauss[index];
           }
           newBlueValue = parseInt(newBlueValue / sumGauss);
-          data[i] = newBlueValue;
+          data[i + 2] = newBlueValue;
         }
         // Parse data
         idata.data = data;
