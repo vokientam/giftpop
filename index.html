@@ -49,15 +49,15 @@
           var arrRedPixel = [0, 0, 0,
                                0, 0, 0,
                                0, 0, 0];
-          arrRedPixel[0] = data[i - pos - 4];  // top left element
-          arrRedPixel[1] = data[i - pos];      // top element
-          arrRedPixel[2] = data[i - pos + 4];  // top right element
+          arrRedPixel[0] = data[i - pos - 4]; // top left element
+          arrRedPixel[1] = data[i - pos];     // top element
+          arrRedPixel[2] = data[i - pos + 4]; // top right element
           arrRedPixel[3] = data[i - 4];       // left element
           arrRedPixel[4] = data[i];           // middle element
           arrRedPixel[5] = data[i + 4];       // right element
-          arrRedPixel[6] = data[i + pos - 4];  // bottom left element
-          arrRedPixel[7] = data[i + pos];      // bottom element
-          arrRedPixel[8] = data[i + pos + 4];  // bottom right element
+          arrRedPixel[6] = data[i + pos - 4]; // bottom left element
+          arrRedPixel[7] = data[i + pos];     // bottom element
+          arrRedPixel[8] = data[i + pos + 4]; // bottom right element
 
           var newRedValue = 0;
 
@@ -120,7 +120,7 @@
   </head>
   <body>
     <video id="videoOrigin" controls loop>
-        <source src=test.mp4 type=video/mp4>
+        <source src=nature.mp4 type=video/mp4>
     </video>
     <canvas id="videoResult">
 
