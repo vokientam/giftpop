@@ -28,9 +28,10 @@
 			var date = GetURLParameter('date');
 			console.log(code);
 			console.log(date);
-			console.log("Test");
+			
 			
 			document.getElementById("code").innerHTML = code;
+			document.getElementById("date").innerHTML = date;
 		}
         
         </script>
@@ -67,7 +68,7 @@
 
 			<div class="couponContents">
 				<h5>Golden Gate</h5>
-				<h6>Phiếu quà tặng Golden Gate 100k</h6>
+				<h6>Phiếu quà tặng Golden Gate 200k</h6>
 												<div class="barcode"><img src="http://img.giftpop.vn/barcode.php?barcode=999327626526&amp;mode=3"></div><!-- mode 1  (  120 / 40 ) mode 2  (  220 / 70 )mode 3  (  340 / 110 ) -->
 
 				<!--<div class="barcodeNum">999-234-626-526</div>-->
@@ -85,7 +86,7 @@
                     <li>Cảm ơn anh</li>
 
                     <!-- 유효기간 -->
-                    <h3>Hạn SD: 31/10/2020</h3>
+                    <h3>Hạn SD: <p id="date"></p></h3>
                     <!-- 매장 -->
 					
                     <li>Áp dụng cho toàn bộ sản phẩm tại các cửa hàng được Golden Gate chỉ định. Vui lòng xem thêm thông tin địa chỉ cửa hàng bên dưới.</li>
