@@ -10,6 +10,27 @@
 	<link href="https://z.giftpop.vn/common/coupon.css?v=108" rel="stylesheet">
 </head>
 <body onload="showVoucher()">
+<script>
+function GetURLParameter(sParam)
+	{
+		var sPageURL = window.location.search.substring(1);
+		var sURLVariables = sPageURL.split('&');
+		for (var i = 0; i < sURLVariables.length; i++) 
+		{
+			var sParameterName = sURLVariables[i].split('=');
+			if (sParameterName[0] == sParam) 
+			{
+				return sParameterName[1];
+			}
+		}
+	}​
+	function showVoucher()
+	{
+		var code = GetURLParameter('code');
+		var date = GetURLParameter('date');
+		console.log(code);
+	}
+</script>
 <div class="wrap">
 	<input type="hidden" id="Lang" name="Lang" value="vn">
 	<input type="hidden" id="chkstep" name="chkstep" value="pinchk">
@@ -444,25 +465,7 @@ Golden Gate cash gift voucher denominations from 100k to 1000k will be the perfe
 
 <script>
 
-	function GetURLParameter(sParam)
-	{
-		var sPageURL = window.location.search.substring(1);
-		var sURLVariables = sPageURL.split('&');
-		for (var i = 0; i < sURLVariables.length; i++) 
-		{
-			var sParameterName = sURLVariables[i].split('=');
-			if (sParameterName[0] == sParam) 
-			{
-				return sParameterName[1];
-			}
-		}
-	}​
-	function showVoucher()
-	{
-		var code = GetURLParameter('code');
-		var date = GetURLParameter('date');
-		console.log(code);
-	}
+	
     function goVr(lang){
         if(lang=="vn"){
 			$('#Lang').val("vn");
