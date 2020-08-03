@@ -46,7 +46,511 @@
         </script>
 </head>
 <body onload=showVoucher()>
-<div>
-<p> Ahihi </p>
-</div>
-</body></html>
+<div class="wrap">
+	<input type="hidden" id="Lang" name="Lang" value="vn">
+	<input type="hidden" id="chkstep" name="chkstep" value="pinchk">
+	<input type="hidden" id="request_status" name="request_status" value="yes">
+	<input type="hidden" id="cashbalance" name="cashbalance" value="">
+	<input type="hidden" name="error" id="error" value="">
+
+    	 <div id="coupon_vn" style="width:100%;padding:0px;">
+		<div class="inner">
+			<div class="header">
+									<h2><a style="display: block; position: relative;" href="https://www.giftpop.vn"> <img src="http://img.giftpop.vn/coupon/images/logo.png" alt="Giftpop Logo" style="width:80%"></a></h2>
+								<h3 class="popupFlag">
+					<img src="http://www.giftpop.vn/resources_en/images/common/flag_vietnam.gif" alt="">
+					<dl>
+						<dt style="top:0px;height: 30px;"><a onclick="goVr('vn')"><img src="http://www.giftpop.vn/resources_en/images/common/flag_vietnam.gif" alt=""></a></dt>
+						<dt style="top:60px;height: 30px;"><a onclick="goVr('en')"><img src="http://www.giftpop.vn/resources_en/images/common/flag_eng.gif" alt=""></a></dt>
+						<dt style="top:30px;height: 30px;"><a onclick="goVr('kr')"><img src="http://www.giftpop.vn/resources_en/images/common/flag_korea.gif" alt=""></a></dt>
+					</dl>
+				</h3>
+				<!-- <a href="#" class="close"><img src="http://img.giftpop.vn/coupon/images/popupClose.png" alt="" /></a> -->
+			</div>
+			<div class="productGreyBack">
+                                                           <!--<img src="http://www.giftpop.info/upload/shBBS/" alt="" />-->
+                                                       
+            </div>
+			<div class="productGreyBack">
+				<img src="https://img.giftpop.vn/brand/GOLDENGATE/MP1905300002_BASIC_coupon.jpg" alt="">
+			</div>
+
+			<div class="couponContents">
+				<h5>Golden Gate</h5>
+				<h6>Phiếu quà tặng Golden Gate 200k</h6>
+												<div class="barcode"><img id="imgBarcode" src="http://img.giftpop.vn/barcode.php?barcode=" ></div><!-- mode 1  (  120 / 40 ) mode 2  (  220 / 70 )mode 3  (  340 / 110 ) -->
+
+				<!--<div class="barcodeNum">999-234-626-526</div>-->
+				<div class="barcodeNum"> <p id="code"></p></div>
+
+								            </div>
+			<!--Binh-->
+						   
+            						
+            <div class="couponInfo">
+                <ul>
+					 
+					                    <!-- 메시지 -->
+                    <h3>Nội dung tin nhắn</h3>
+                    <li>Cảm ơn bạn đã mua hàng!</li>
+
+                    <!-- 유효기간 -->
+                    <h3>Hạn SD: <span id="date"></span></h3>
+                    <!-- 매장 -->
+					
+                    <li>Áp dụng cho toàn bộ sản phẩm tại các cửa hàng được Golden Gate chỉ định. Vui lòng xem thêm thông tin địa chỉ cửa hàng bên dưới.</li>
+																		<h3>Cửa hàng SD<a href="http://z.giftpop.vn/goodsView/StoreInfo.php?goodsid=MP1905300001&amp;lang=vn">+ Xem cửa hàng</a></h3>			
+												
+										
+
+                    <!-- 상품 설명 -->
+                    <h3>Thông tin sản phẩm<a href="http://z.giftpop.vn/goodsView/VoucherInfo.php?goodsid=MP1905300001&amp;lang=vn">+ Xem thêm</a></h3>
+                    <li><p><span style="font-size: 16px;"><span style="font-family: arial, helvetica, sans-serif;"><span style="color: rgb(255, 0, 0);"><strong>* Với tình hình dịch bệnh Covid-19 đang diễn biến phức tạp, các cửa hàng thuộc chuỗi Golden Gate tại Đà Nẵng và Quảng Ngãi&nbsp;tạm thời đóng cửa cho đến khi có thông báo mới.</strong></span><br>
+<br>
+*&nbsp;</span></span><strong><span style="font-size: 16px;"><span style="font-family: arial, helvetica, sans-serif;">Thương hiệu áp dụng voucher Golden Gate</span></span></strong></p>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr>
+			<td><strong><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Thương hiệu</span></span></strong></td>
+			<td><strong><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Thương hiệu</span></span></strong></td>
+			<td><strong><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Thương hiệu</span></span></strong></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Ashima</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">K-Pub</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">37th Street</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Hutong</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Shogun</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Gogi House</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Kichi-Kichi</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Isushi</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Sumo Yakiniku</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Cowboy Jack's</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Daruma</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Yutang</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">ManWah</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Crystal Jade Kitchen</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Chilis</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Vuvuzela</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">500 Pizzeria</span></span></td>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<p><img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/8.jpg" style="font-family: arial, helvetica, sans-serif; font-size: 16px;"><br style="font-family: arial, helvetica, sans-serif; font-size: 16px;">
+<br style="font-family: arial, helvetica, sans-serif; font-size: 16px;">
+<img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/14.jpg" style="font-family: arial, helvetica, sans-serif; font-size: 16px;"><br style="font-family: arial, helvetica, sans-serif; font-size: 16px;">
+<br style="font-family: arial, helvetica, sans-serif; font-size: 16px;">
+<img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/6.jpg" style="font-family: arial, helvetica, sans-serif; font-size: 16px;"><br style="font-family: arial, helvetica, sans-serif; font-size: 16px;">
+<br style="font-family: arial, helvetica, sans-serif; font-size: 16px;">
+<img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/15.jpg" style="font-family: arial, helvetica, sans-serif; font-size: 16px;"></p>
+
+<p style="margin-left: 0.5in;">&nbsp;</p>
+
+<p style="margin-left: 0.5in;">&nbsp;</p>
+</li>
+                        
+                    <!-- 이미지 다운로드 -->
+                    <h3>Ảnh voucher <a href="http://img.giftpop.vn/img.php?V=QUtpM2VlV1lscVJpdGY1OXdPcUszeWc3&amp;L=VN"> Tải về</a></h3>
+                   
+
+                </ul>
+            </div>
+         </div> 
+     </div> 
+    	 <div id="coupon_en" style="width:100%;padding:0px;display:none">
+		<div class="inner">
+            <div class="header">
+									<h2><a style="display: block; position: relative;" href="https://www.giftpop.vn"> <img src="http://img.giftpop.vn/coupon/images/logo.png" alt="Giftpop Logo" style="width:80%"></a></h2>
+				                
+                <h3 class="popupFlag">
+                    <img src="http://www.giftpop.vn/resources_en/images/common/flag_eng.gif" alt="">
+                    <dl>
+						<dt style="top:0px;height: 30px;"><a onclick="goVr('vn')"><img src="http://www.giftpop.vn/resources_en/images/common/flag_vietnam.gif" alt=""></a></dt>
+						<dt style="top:60px;height: 30px;"><a onclick="goVr('en')"><img src="http://www.giftpop.vn/resources_en/images/common/flag_eng.gif" alt=""></a></dt>
+						<dt style="top:30px;height: 30px;"><a onclick="goVr('kr')"><img src="http://www.giftpop.vn/resources_en/images/common/flag_korea.gif" alt=""></a></dt>
+                   </dl>
+                </h3>
+                <!-- <a href="#" class="close"><img src="http://img.giftpop.vn/coupon/images/popupClose.png" alt="" /></a> -->
+            </div>
+			<div class="productGreyBack">
+                                                           <!--<img src="http://www.giftpop.info/upload/shBBS/" alt="" />-->
+                                                       
+            </div>
+            <div class="productGreyBack">
+                <img src="https://img.giftpop.vn/brand/GOLDENGATE/MP1905300001_BASIC_coupon.jpg" alt="">
+            </div>
+			  
+            <div class="couponContents">
+                    <h5>Golden Gate</h5>
+                    <h6>Golden Gate Cash voucher 100k</h6>
+									                    <div class="barcode"><img src="http://img.giftpop.vn/barcode.php?barcode=999327626526&amp;mode=3"></div>
+                    <!--<div class="barcodeNum">999-327-626-526</div>-->
+					<div class="barcodeNum">999-327-626-526</div>
+					
+								            </div>
+			<!--Binh-->
+						   
+            			
+			            <div class="couponInfo">
+                <ul>
+										                    <!-- 메시지 -->
+                    <h3>Gift Message</h3>
+                    <li>Cảm ơn anh</li>
+
+                    <!-- 유효기간 -->
+                    <h3>Expiry date: 31/10/2020</h3>
+					<!-- 매장 -->
+					
+                    <li>Apply for all stores which assigned by Golden Gate. Please see the stores information below.</li>
+																		<h3>Available stores<a href="http://z.giftpop.vn/goodsView/StoreInfo.php?goodsid=MP1905300001&amp;lang=en">+ See the store</a></h3>
+												
+										                    
+                    <!-- 상품 설명 -->
+                    <h3>Product information<a href="http://z.giftpop.vn/goodsView/VoucherInfo.php?goodsid=MP1905300001&amp;lang=en">+ More</a></h3>
+                    <li><p><span style="font-size: 16px;"><span style="font-family: arial, helvetica, sans-serif;"><strong><span style="color: rgb(255, 0, 0);">* Because of COVID-19 disease is complicated, Golden Gate announces temporary halt to receive guests at Da Nang &amp; Quang Ngai stores until further notice.</span><br>
+<br>
+* Voucher is applicable at Golden Gate brand such as:</strong></span></span></p>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr>
+		</tr>
+		<tr>
+			<td><strong><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Brand</span></span></strong></td>
+			<td><strong><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Brand</span></span></strong></td>
+			<td><strong><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Brand</span></span></strong></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Ashima</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">K-Pub</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">37th Street</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Hutong</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Shogun</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Gogi House</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Kichi-Kichi</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Isushi</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Sumo Yakiniku</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Cowboy Jack's</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Daruma</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Yutang</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">ManWah</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Crystal Jade Kitchen</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Chilis</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Vuvuzela</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">500 Pizzeria</span></span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size: 16px;"><span style="font-family: arial, helvetica, sans-serif;">To the Golden Gate, depending on the preferences and tastes of each person that you can choose yourself the menu dishes, all of menus are carefully prepared, thorough and art from the famous &amp; skilled chefs. Besides that, input the raw material supply chain is fresh, ensure safety and saving cost. In particular, coming to the Golden Gate with 18&nbsp;brands along with more than 300 restaurants serves special dishes as the typical hot pot buffet,BBQ buffet, conveyor belt hot pot. All of them bring a special&nbsp; from taste, design space until the services.&nbsp;<br>
+Golden Gate cash gift voucher denominations from 100k to 1000k will be the perfect solution for business using as gift or reward for employees, will also be present meaningful and practical to give your friends on holidays, birthdays...The cash voucher is applied to buy all the products in the stores quickly, using easily, pervasive love.<br>
+<br>
+<img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/8.jpg"><br>
+<br>
+<img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/14.jpg"><br>
+<br>
+<img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/6.jpg"><br>
+<br>
+<img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/15.jpg"></span></span></p>
+</li>
+                        
+                    <!-- 이미지 다운로드 -->
+                    <h3>Voucher image <a href="http://img.giftpop.vn/img.php?V=QUtpM2VlV1lscVJpdGY1OXdPcUszeWc3&amp;L=EN"> DownLoad</a></h3>
+                 
+
+                </ul>
+            </div>
+		</div> 
+
+	 </div> 
+    
+    	 <div id="coupon_kr" style="width:100%;padding:0px;display:none">
+         <div class="inner">
+            <div class="header">
+									<h2><a style="display: block; position: relative;" href="https://www.giftpop.vn"> <img src="http://img.giftpop.vn/coupon/images/logo.png" alt="Giftpop Logo" style="width:80%"></a></h2>
+				                
+                <h3 class="popupFlag">
+                    <img src="http://www.giftpop.vn/resources_en/images/common/flag_korea.gif" alt="">
+                    <dl>
+						<dt style="top:0px;height: 30px;"><a onclick="goVr('vn')"><img src="http://www.giftpop.vn/resources_en/images/common/flag_vietnam.gif" alt=""></a></dt>
+						<dt style="top:60px;height: 30px;"><a onclick="goVr('en')"><img src="http://www.giftpop.vn/resources_en/images/common/flag_eng.gif" alt=""></a></dt>
+						<dt style="top:30px;height: 30px;"><a onclick="goVr('kr')"><img src="http://www.giftpop.vn/resources_en/images/common/flag_korea.gif" alt=""></a></dt>
+                   </dl>
+                </h3>
+                <!-- <a href="#" class="close"><img src="http://img.giftpop.vn/coupon/images/popupClose.png" alt="" /></a> -->
+            </div>
+			<div class="productGreyBack">
+                                                           <!--<img src="http://www.giftpop.info/upload/shBBS/" alt="" />-->
+                                                       
+            </div>
+            <div class="productGreyBack">
+                <img src="https://img.giftpop.vn/brand/GOLDENGATE/MP1905300001_BASIC_coupon.jpg" alt="">
+            </div>
+            <div class="couponContents">
+                <h5>Golden Gate</h5>
+                <h6>Golden Gate Cash voucher 200k</h6>
+													<div class="barcode"><img src="http://img.giftpop.vn/barcode.php?barcode=999327626526&amp;mode=3"></div>
+					<!--<div class="barcodeNum">999-327-626-526</div>-->
+					<div class="barcodeNum">999-327-626-526</div>
+										            </div>
+			<!--Binh-->
+						   
+            						 
+            <div class="couponInfo">
+                <ul>
+										                    <!-- 메시지 -->
+                    <h3>메세지 내용</h3>
+                    <li>Cảm ơn anh</li>
+
+                    <!-- 유효기간 -->
+                    <h3>유효기간:  31/10/2020</h3>
+
+                    <!-- 매장 -->		
+					
+                    <li>Apply for all stores which assigned by Golden Gate. Please see the stores information below.</li>   
+																	<h3>사용매장<a href="http://z.giftpop.vn/goodsView/StoreInfo.php?goodsid=MP1905300001&amp;lang=kr">+ 상점 보기</a></h3>
+																						  <h3>상품설명<a href="http://z.giftpop.vn/goodsView/VoucherInfo.php?goodsid=MP1905300001&amp;lang=kr">+ 더 보기</a></h3>
+                            <li><p><span style="font-size: 16px;"><span style="font-family: arial, helvetica, sans-serif;"><strong><span style="color: rgb(255, 0, 0);">* Because of COVID-19 disease is complicated, Golden Gate announces temporary halt to receive guests at Da Nang &amp; Quang Ngai stores until further notice.</span><br>
+<br>
+* Voucher is applicable at Golden Gate brand such as:</strong></span></span></p>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width: 500px;">
+	<tbody>
+		<tr>
+		</tr>
+		<tr>
+			<td><strong><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Brand</span></span></strong></td>
+			<td><strong><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Brand</span></span></strong></td>
+			<td><strong><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Brand</span></span></strong></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Ashima</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">K-Pub</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">37th Street</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Hutong</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Shogun</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Gogi House</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Kichi-Kichi</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Isushi</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Sumo Yakiniku</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Cowboy Jack's</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Daruma</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Yutang</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">ManWah</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Crystal Jade Kitchen</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Chilis</span></span></td>
+		</tr>
+		<tr>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">Vuvuzela</span></span></td>
+			<td><span style="font-size: 20px;"><span style="font-family: arial, helvetica, sans-serif;">500 Pizzeria</span></span></td>
+		</tr>
+	</tbody>
+</table>
+
+<p><span style="font-size: 16px;"><span style="font-family: arial, helvetica, sans-serif;">To the Golden Gate, depending on the preferences and tastes of each person that you can choose yourself the menu dishes, all of menus are carefully prepared, thorough and art from the famous &amp; skilled chefs. Besides that, input the raw material supply chain is fresh, ensure safety and saving cost. In particular, coming to the Golden Gate with 18&nbsp;brands along with more than 300 restaurants serves special dishes as the typical hot pot buffet,BBQ buffet, conveyor belt hot pot. All of them bring a special&nbsp; from taste, design space until the services.&nbsp;<br>
+Golden Gate cash gift voucher denominations from 100k to 1000k will be the perfect solution for business using as gift or reward for employees, will also be present meaningful and practical to give your friends on holidays, birthdays...The cash voucher is applied to buy all the products in the stores quickly, using easily, pervasive love.<br>
+<br>
+<img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/8.jpg"><br>
+<br>
+<img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/14.jpg"><br>
+<br>
+<img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/6.jpg"><br>
+<br>
+<img alt="" src="//www.giftpop.vn/upload/ckEditorFile/0/images/15.jpg"></span></span></p>
+</li>
+                            
+
+                    <!-- 상품 설명 -->
+                    <h3>상품설명<a href="http://z.giftpop.vn/goodsView/VoucherInfo.php?goodsid=MP1905300001&amp;lang=kr">+ 더 보기</a></h3>
+                    <li></li>
+                        
+                    <!-- 이미지 다운로드 -->
+                    <h3>쿠폰 이미지 <a href="http://img.giftpop.vn/img.php?V=QUtpM2VlV1lscVJpdGY1OXdPcUszeWc3&amp;L=KR"> 다운로드</a></h3>
+                  
+                </ul>
+            </div>
+	    </div>
+	 </div> 
+
+    	 <div id="coupon_footer_vn" style="width:100%;padding:0px; ">
+         <div class="inner">
+			<br>
+            			<div style="text-align:center">
+                <a href="https://www.giftpop.vn/category/list/?category_code=A107&amp;brand_code=LOTTECINEMA" target="_blank"><img src="https://www.giftpop.vn/upload/shBBS/1595239777.jpg" alt="" style="width:90%"></a>
+            </div>
+			            			<div style="text-align:center">
+                <a href="https://www.giftpop.vn/brandshop/list?view&amp;brand_code=PAMPERME" target="_blank"><img src="https://www.giftpop.vn/upload/shBBS/1595239812.jpg" alt="" style="width:90%"></a>
+            </div>
+						            <!-- <div style="text-align:center">
+                <a href="https://www.giftpop.vn/promotion/sub_list/GIFTPOP201807" target='_blank'><img src="https://www.giftpop.vn/upload/shBBS/1531366846-3.jpg" alt="" style="width:90%"></a>
+            </div>
+            <div style="text-align:center">
+                <a href="https://www.giftpop.vn/promotion/sub_list/20180750_KM" target='_blank'><img src="https://www.giftpop.vn/upload/shBBS/1530778314-3.jpg" alt="" style="width:90%"></a>
+            </div> -->
+
+
+           
+	    </div>
+	 </div>
+	 	 <div id="coupon_footer_en" style="width:100%;padding:0px; display:none">
+         <div class="inner">
+			<br>
+            			<div style="text-align:center">
+                <a href="https://www.giftpop.vn/category/list/?category_code=A107&amp;brand_code=LOTTECINEMA" target="_blank"><img src="https://www.giftpop.vn/upload/shBBS/en_1595239777.jpg" alt="" style="width:90%"></a>
+            </div>
+			            			<div style="text-align:center">
+                <a href="https://www.giftpop.vn/brandshop/list?view&amp;brand_code=PAMPERME" target="_blank"><img src="https://www.giftpop.vn/upload/shBBS/en_1595239812.jpg" alt="" style="width:90%"></a>
+            </div>
+						            <!-- <div style="text-align:center">
+                <a href="https://www.giftpop.vn/promotion/sub_list/GIFTPOP201807" target='_blank'><img src="https://www.giftpop.vn/upload/shBBS/1531366846-3.jpg" alt="" style="width:90%"></a>
+            </div>
+            <div style="text-align:center">
+                <a href="https://www.giftpop.vn/promotion/sub_list/20180750_KM" target='_blank'><img src="https://www.giftpop.vn/upload/shBBS/1530778314-3.jpg" alt="" style="width:90%"></a>
+            </div> -->
+
+
+           
+	    </div>
+	 </div>
+	 	 <div id="coupon_footer_kr" style="width:100%;padding:0px; display:none">
+         <div class="inner">
+			<br>
+            			<div style="text-align:center">
+                <a href="https://www.giftpop.vn/category/list/?category_code=A107&amp;brand_code=LOTTECINEMA" target="_blank"><img src="https://www.giftpop.vn/upload/shBBS/en_1595239777.jpg" alt="" style="width:90%"></a>
+            </div>
+			            			<div style="text-align:center">
+                <a href="https://www.giftpop.vn/brandshop/list?view&amp;brand_code=PAMPERME" target="_blank"><img src="https://www.giftpop.vn/upload/shBBS/en_1595239812.jpg" alt="" style="width:90%"></a>
+            </div>
+						            <!-- <div style="text-align:center">
+                <a href="https://www.giftpop.vn/promotion/sub_list/GIFTPOP201807" target='_blank'><img src="https://www.giftpop.vn/upload/shBBS/1531366846-3.jpg" alt="" style="width:90%"></a>
+            </div>
+            <div style="text-align:center">
+                <a href="https://www.giftpop.vn/promotion/sub_list/20180750_KM" target='_blank'><img src="https://www.giftpop.vn/upload/shBBS/1530778314-3.jpg" alt="" style="width:90%"></a>
+            </div> -->
+
+
+           
+	    </div>
+	 </div>
+		<div class="inner">
+			 <div>
+				 					<a href="tel:1900558812" style="width: 100%;text-align: center;display: block; padding-top: 10px;color: #ed1c24;padding-bottom: 10px;">Hotline <span style="color: #ed1c24;font-weight:600">1900 55 88 12</span></a>
+					<p style="text-align:center"><a href="https://www.giftpop.vn/" target="_blank"><img src="http://img.giftpop.vn/coupon/images/logo.png" alt="Giftpop Logo" style="    padding: 10px 0 18px;"></a></p>
+					            </div>
+		</div>
+
+	</div>
+
+
+
+
+
+<script>
+
+	
+    function goVr(lang){
+        if(lang=="vn"){
+			$('#Lang').val("vn");
+            $("#coupon_vn").show();
+            $("#coupon_en").hide();
+            $("#coupon_kr").hide();
+            $("#coupon_use").hide();
+			 $("#coupon_footer_vn").show();
+            $("#coupon_footer_en").hide();
+            $("#coupon_footer_kr").hide();
+            //$("#coupon_footer").hide();
+        }
+        if(lang=="en"){
+			$('#Lang').val("en");
+            $("#coupon_vn").hide();
+            $("#coupon_en").show(); 
+            $("#coupon_kr").hide();
+            $("#coupon_use").hide();
+			$("#coupon_footer_vn").hide();
+            $("#coupon_footer_en").show();
+            $("#coupon_footer_kr").hide();
+            //$("#coupon_footer").hide();
+        }
+        if(lang=="kr"){
+			$('#Lang').val("kr");
+            $("#coupon_vn").hide();
+            $("#coupon_en").hide();
+            $("#coupon_kr").show();
+            $("#coupon_use").hide();
+			$("#coupon_footer_vn").hide();
+            $("#coupon_footer_en").hide();
+            $("#coupon_footer_kr").show();
+            //$("#coupon_footer").hide();
+        }
+        if(lang=="use"){
+            $("#coupon_vn").hide();
+            $("#coupon_en").hide();
+            $("#coupon_kr").hide();
+            $("#coupon_footer").hide();
+            $("#coupon_use").show();
+			$("#coupon_footer_vn").hide();
+            $("#coupon_footer_en").hide();
+            $("#coupon_footer_kr").hide();
+        }
+        if(lang=="close"){
+			var Lang = $('#Lang').val();
+            $("#coupon_vn").hide();
+            $("#coupon_en").hide();
+            $("#coupon_kr").hide();
+            $("#coupon_footer").show();
+            $("#coupon_use").hide();
+            $("#coupon_"+Lang).show();
+			$("#coupon_footer_vn").hide();
+            $("#coupon_footer_en").hide();
+            $("#coupon_footer_kr").hide();
+        }
+    }
+
+    function goUse(){
+        var scode = $("#stroeCode").val();
+        if(scode == ""){
+            alert('\n Pleace enter the unique code number of your store!');
+            $("#stroeCode").focus();
+        }else if(scode == "12345"){
+            alert('\n Success\n\n Mobile voucher exchange processing is completed!');
+            goVr('en');
+            $("[id^='redeem']").hide();
+        }else{
+            alert('\n Error\n\n The number you entered is an unregistered number!\n\n Try again.');
+            $("#stroeCode").select();
+        }
+    }
+      	</script></body></html>
