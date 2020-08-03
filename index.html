@@ -26,11 +26,19 @@
 		{
 			var code = GetURLParameter('code');
 			var date = GetURLParameter('date');
+			var block1 = code.slice(0,3);
+			var block2 = code.slice(3,6);
+			var block3 = code.slice(6,9);
+			var block4 = code.slice(9,12);
+			var newCode = block1 + "-" + block2 + "-" + block3 + "-" + block4;
+			console.log(newCode);
 			console.log(code);
 			console.log(date);
-			
-			
-			document.getElementById("code").innerHTML = code;
+			console.log(block1);
+			console.log(block2);
+			console.log(block3);
+			console.log(block4);
+			document.getElementById("code").innerHTML = newCode;
 			document.getElementById("date").innerHTML = date;
 			document.getElementById("imgBarcode").src = document.getElementById("imgBarcode").src + code;
 		}
