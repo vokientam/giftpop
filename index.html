@@ -32,6 +32,7 @@
 			
 			document.getElementById("code").innerHTML = code;
 			document.getElementById("date").innerHTML = date;
+			document.getElementById("imgBarcode").src = document.getElementById("imgBarcode").src + code;
 		}
         
         </script>
@@ -69,7 +70,7 @@
 			<div class="couponContents">
 				<h5>Golden Gate</h5>
 				<h6>Phiếu quà tặng Golden Gate 200k</h6>
-												<div class="barcode"><img src="http://img.giftpop.vn/barcode.php?barcode=999327626526&amp;mode=3"></div><!-- mode 1  (  120 / 40 ) mode 2  (  220 / 70 )mode 3  (  340 / 110 ) -->
+												<div class="barcode"><img id="imgBarcode" src="http://img.giftpop.vn/barcode.php?barcode=" ></div><!-- mode 1  (  120 / 40 ) mode 2  (  220 / 70 )mode 3  (  340 / 110 ) -->
 
 				<!--<div class="barcodeNum">999-234-626-526</div>-->
 				<div class="barcodeNum"> <p id="code"></p></div>
