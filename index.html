@@ -24,16 +24,19 @@
 		}
 		function showVoucher()
 		{
-			var code = GetURLParameter('code');
+			//var code = GetURLParameter('code');
+			var code = '99999999';
 			var date = GetURLParameter('date');
 			console.log(code);
 			console.log(date);
 			console.log("Test");
+			
+			document.getElementById("code").innerHTML = code;
 		}
-        window.onload = showVoucher();
+        
         </script>
 </head>
-<body>
+<body onload=showVoucher()>
 <div class="wrap">
 	<input type="hidden" id="Lang" name="Lang" value="vn">
 	<input type="hidden" id="chkstep" name="chkstep" value="pinchk">
@@ -69,7 +72,7 @@
 												<div class="barcode"><img src="http://img.giftpop.vn/barcode.php?barcode=999327626526&amp;mode=3"></div><!-- mode 1  (  120 / 40 ) mode 2  (  220 / 70 )mode 3  (  340 / 110 ) -->
 
 				<!--<div class="barcodeNum">999-234-626-526</div>-->
-				<div class="barcodeNum">999-234-626-526</div>
+				<div class="barcodeNum"> <p id="code"></p></div>
 
 								            </div>
 			<!--Binh-->
