@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="vi"><head>
   <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -21,14 +21,16 @@
 					return sParameterName[1];
 				}
 			}
-		}​
+		}
 		function showVoucher()
 		{
 			var code = GetURLParameter('code');
 			var date = GetURLParameter('date');
 			console.log(code);
+			console.log(date);
+			console.log("Test");
 		}
-        window.onload = showVoucher;
+        window.onload = showVoucher();
         </script>
 </head>
 <body>
